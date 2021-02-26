@@ -3,8 +3,23 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+let glyphStates = {
+
+}
+
+let likeGlyphs = document.querySelectorAll('.like-glyph')
+likeGlyphs.forEach(like => like.addEventListener('click', fillHeart))
 
 
+function fillHeart(e) {
+  if (e.target.innerText === EMPTY_HEART) {
+    e.target.innerText = FULL_HEART;
+    e.target.style.color = 'red';
+  } else {
+    e.target.innerText = EMPTY_HEART;
+    e.target.style.color = '';
+  }
+}
 
 
 //------------------------------------------------------------------------------
